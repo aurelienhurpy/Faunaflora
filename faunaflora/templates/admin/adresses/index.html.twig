@@ -1,0 +1,49 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Gestion des informations de contact Fauna Flora{% endblock %}
+
+{% block body %}
+    <div class="dashb">
+        <div class="breadcumb-area">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('admin_infos') }}">Gestion de la présentation</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Gestion des informations de contact Fauna Flora</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="adminban">
+            <h1 class="text-center text-white">Gestion des informations de contact Fauna Flora</h1>
+        </div>
+        <table class="table table-hover">
+            <thead class="table-secondary ">
+                <th>Nom</th>
+                <th>Rue</th>
+                <th>Ville</th>
+                <th>Téléphone</th>
+                <th>Mail</th>
+                <th class="text-center">Action</th>
+            </thead>
+            <tbody>
+                {% for adresses in pagination.data %}
+                    <tr>
+                        <td>{{ adresses.nom }}</td>
+                        <td>{{ adresses.rue }}</td>
+                        <td>{{ adresses.ville }}</td>
+                        <td>{{ adresses.tel }}</td>
+                        <td>{{ adresses.mail }}</td>
+                        <td class="text-center">
+                            <a href="{{ path('admin_adresses_edit',{'id':adresses.id}) }}" class="btn btn-edit btn-sm mb-1">Modifier <i class="fas fa-edit"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if pagination.data is empty %}
+            <div class="text-center mb-5">
+                <a href="{{ path('adresses_create') }}" class="btn table-secondary btn-sm">Créer</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

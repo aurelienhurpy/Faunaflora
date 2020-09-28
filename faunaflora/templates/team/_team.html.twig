@@ -1,0 +1,25 @@
+ {% set url=path('team_single',{'id':team.id}) %}
+    <div class="">
+        <div id="portfolio">
+            <a href="{{ url }}">
+                <img src="{{ asset('images/fauna/' ~ team.fileName) }}" alt="">
+                <figcaption>
+                    <h5 class="text-center mt-3">{{team.lastname}} <span>{{team.firstname}}</span></h5>
+                    <p class="text-center pb-3">{{team.title}}</p>
+                </figcaption> 
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+             
+       
+            
+          

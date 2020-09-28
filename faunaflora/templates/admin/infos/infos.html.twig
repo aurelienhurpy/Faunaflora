@@ -1,0 +1,45 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Gestion de la présentation{% endblock %}
+
+{% block body %}
+    <div class="dashb">
+        <div class="breadcumb-area">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Gestion de la présentation</li>
+                </ol>
+            </nav>
+        </div>
+        <table class="table table-hover">
+            <div class="adminban">
+                <h1 class="text-center text-white">Gestion de la présentation</h1> 
+            </div>
+        </table>
+        <div class="row infosdiv">
+            <div class="col">
+                <div class="card infoscard text-white text-center p-5 m-5">
+                    <a class="text-white" href="{{ path('admin_intro_list') }}">
+                        <div class="card-body">
+                            <div>
+                                <h5 class="card-title">Création de la page entreprise Fauna Flora</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card bg-success text-white text-center  p-5 m-5">
+                    <a class="text-white" href="{{ path('admin_adresses_list') }}">
+                        <div class="card-body">
+                            <div>
+                                <h5 class="card-title">Création des informations de contact Fauna Flora</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div> 
+        </div> 
+    </div>
+{% endblock %}

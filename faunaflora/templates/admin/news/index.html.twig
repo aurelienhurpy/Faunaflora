@@ -1,0 +1,43 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Gestion des actualités{% endblock %}
+
+{% block body %}
+    <div class="dashb">
+        <div class="breadcumb-area">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Gestion des actualités</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="adminban">
+            <h1 class="text-center text-white">Gestion des actualités</h1>
+        </div>
+        <table class="table table-hover">
+            <thead class="table-secondary text-center">
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th class="text-center">Action</th>
+            </thead>
+            <tbody>
+                {% for news in pagination.data %}
+                    <tr>
+                        <td class="text-center">{{ news.title }}</td>
+                        <td class="text-center">{{ news.content }}</td>
+                        <td class="text-center">
+                            <a href="{{ path('admin_news_edit',{'id':news.id}) }}" class="btn btn-edit btn-sm mb-1">Modifier <i class="fas fa-edit"></i></a>
+                            <a href="{{ path('admin_news_delete',{'id':news.id}) }}" data-confirm="Attention ! Etes-vous sûr de vouloir supprimer ?" class="btn btn-danger btn-sm">Retirer <i class="fas fa-trash"></i></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center  mb-5">
+            <a href="{{ path('news_create') }}" class="btn table-secondary btn-sm create  mb-5">Créer</a>
+        </div>
+        {% if pagination.data|length > 5 %}
+    {{ pagination.display() }} 
+     {% endif %}
+    </div>
+{% endblock %}

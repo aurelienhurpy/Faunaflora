@@ -1,0 +1,76 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Modification partenaire{% endblock %}
+
+{% form_theme form _self %}
+
+{% block body %}
+    <main class="dashb">
+        <div class="breadcumb-area">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('admin_partner_list') }}">Gestion des partenaires</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Modification partenaire {{ partner.name }}</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="adminban">
+            <h1 class="text-center text-white">Modification partenaire {{ partner.name }}</h1>
+        </div>
+        <section class="col-md-8 offset-md-2 mt-5">
+            {{ form_start(form) }}
+                <div class="row">
+                    <div class="col bot">
+                        <div class="card bg-light">
+                            <div class="card-header">
+                                <h4 class="card-title">Corriger le contenu ?</h4>
+                            </div>
+                            <div class="card-body">
+                                {{ form_widget(form) }}
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Enregistrer</button>
+                                      <a href="{{ path('admin_partner_list') }}" class="btn btn-warning"><i class="fas fa-times"></i> Annuler</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col bot">
+                        <div class="card bg-light">
+                            <div class="card-header">
+                                <h4 class="card-title">texte actuellement affiché sur le site</h4>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <td>{{ partner.name }}</td>
+                                        </tr>
+                                        <tr>
+                                        <td>{{ partner.link }}</td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="card-header">
+                                <h4 class="card-title">Image actuellement affichée sur le site</h4>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">  
+                                    <thead>
+                                        <tr>
+                                        <td class="text-center"><img src="{{ asset('images/fauna/' ~ partner.fileName) }}" alt="" style="width:70%; height:auto;"> </td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </section>
+    </main>
+{% endblock %}
+
+
+

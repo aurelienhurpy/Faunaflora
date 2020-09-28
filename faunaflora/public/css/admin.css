@@ -1,0 +1,82 @@
+/*body*/
+
+.alpha {padding-left: 0 !important;}
+.omega {padding-right: 0 !important;}
+
+
+/*header*/
+.navbar{padding: 0;padding-left: 2rem;}
+.navbar-light .navbar-nav .nav-link {color: #4a81b9; font-size: 1.8em;}
+.navbar-light .navbar-nav .nav-link:hover{color: #70b352; font-size: 1.8em;}
+.dashtop{margin-top: 8em;}
+.dashb{margin-top: 5em;}
+
+.avatar{width: 128px; height: 128px; border-radius: 50%;}
+.avatar-medium{max-width: 64px; max-height: 64px;}
+.avatar-small{max-width: 32px; max-height: 32px;}
+.avatar-xs{max-width: 26px; max-height: 26px;}
+
+.header_admin{background-color: #fff;}
+
+
+/*breadcumb*/
+.breadcumb-area .breadcrumb {background-color: white;}
+.adminban{background-color: #4a81b9; padding: 1.8em;}
+
+
+/*alert*/
+.alert {margin-top: 2em;margin-bottom: -6.8em;text-align: center;}
+
+
+/*main*/
+.dashteam{background-color: lightskyblue;}
+.dashpartner{background-color: tomato;}
+.dashcontacts{background-color: palevioletred;}
+
+.table th, .table td {border-top: 0;}
+.table-secondary{background-color: #f7f7f7;}
+textarea.form-control{height: 5em;}
+.custom-file-input{ opacity: unset; margin-bottom: 1.5em;}
+.bot{margin-bottom: 7em;}
+.form-group {margin-bottom: 2rem;}
+.btn-edit{background-color: #70b352; color: white;}
+.page-item.active .page-link{background-color: #4a81b9;border-color: #4a81b9;}
+.board{font-size: 1.8em;}
+
+.lu{color: silver;}
+
+
+/*info*/
+.infoscard{background-color:#4a81b9 ;}
+.infosdiv{margin-top: 5em; margin-right: 3em; margin-left: 3em;}
+
+
+/*modal alert*/
+.modal-content{border-radius: 10px;}
+.modal-header {display: inline; text-align: center;padding: 1rem 1rem;margin-left: 1.8em;border-bottom: 1px solid #eceeef;border-top-left-radius: 0;border-top-right-radius: 0;border-bottom: 0;}
+.modal-footer {border-top: 0;}
+.modal-body{font-weight: bold;text-align: center;}
+.fa-exclamation-triangle{color: red;}
+
+
+/*footer*/
+.footer_admin{background-color: #4a81b9; width: 100%; color: white;position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

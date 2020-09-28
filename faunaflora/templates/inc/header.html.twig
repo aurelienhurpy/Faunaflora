@@ -1,0 +1,33 @@
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
+<header class="header-area">
+  <div class="clever-main-menu">
+    <div class="classy-nav-container breakpoint-off">
+      <nav class="classy-navbar justify-content-center mt-4" id="cleverNav">
+        <a class="nav-brand" href="{{ path('homepage') }}"><img src="/img/core-img/Logo.jpg" alt="" style="width:30%; height:auto;"></a>
+        <div class="classy-navbar-toggler">
+          <span class="navbarToggler"><span></span><span></span><span></span></span>
+        </div>
+        <div class="classy-menu">
+          <div class="classycloseIcon">
+            <div class="cross-wrap">
+              <span class="top"></span><span class="bottom"></span>
+            </div>
+          </div>
+          <div class="classynav">
+            <ul>
+              <li><a href="{{ path('homepage') }}">Accueil</a></li>
+              <li><a href="{{ path('intro') }}" class="fauna">L'entreprise</a></li>
+              <li><a href="{{ path('prestations_list') }}">Domaines d'intervention</a></li>
+              <li><a href="{{ path('team') }}">Equipe</a></li>
+              <li><a href="{{ path('news_list') }}">Réalisations</a></li>
+              <li><a href="{{ path('partner') }}">Partenaires</a></li>
+              <li><a href="{{ path('contact_create') }}">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

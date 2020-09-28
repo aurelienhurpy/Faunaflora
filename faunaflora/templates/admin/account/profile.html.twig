@@ -1,0 +1,29 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Modification informations administrateur{% endblock %}
+
+{% block body %}
+    <div class="dashb">   
+        <div class="breadcumb-area">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('admin_account_home') }}">Gestion des informations administrateur</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Modification des informations administrateur</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="adminban">
+            <h1 class="text-center text-white">Modification des informations administrateur</h1>    
+        </div>
+        <section class="col-md-6 offset-md-3 mt-5">
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <div class="form-group text-center mt-5">
+                    <button type="submit" class="btn btn-primary">Mettre à jour votre profil</button>
+                    <a href="{{ path('admin_account_home') }}" class="btn btn-secondary">Annuler</a>
+                </div>
+            {{ form_end(form) }}
+        </section>
+    </div>
+{% endblock %}

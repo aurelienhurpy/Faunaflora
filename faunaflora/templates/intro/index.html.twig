@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'entreprise Fauna Flora{% endblock %}
+
+{% block body %}
+
+<main>
+    <div class="breadcumb-area">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('homepage') }}">Accueil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Fauna Flora</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="clever-catagory bg-img d-flex align-items-center justify-content-center p-3" style="background-image: url(img/bg-img/c1.jpg);">
+        <div class="blog-details-headline">
+            <h3>L'entreprise Fauna Flora</h3>
+            <div class="meta d-flex align-items-center justify-content-center">
+            </div>
+        </div>
+    </div>
+    <div class="blog-details-content section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="blog-details-text">
+                        {% for intro in intro %}
+                            <p>{{ intro.content }}</p>             
+                            <h5 class="py-4">{{ intro.contentb }}</h5>
+                            <p>{{ intro.contentc }}</p>
+                        {% endfor %}  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

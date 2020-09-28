@@ -1,0 +1,168 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="hero-area bg-img bg-overlay-2by5" style="background-image: url(img/bg-img/bg1.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="hero-content text-center">
+                        <h2>Expertise écologique</h2>
+                        <a href="{{ path('intro') }}" class="btn clever-btn">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-courses-area section-padding-100-0" style="background-image: url(img/core-img/texture.png);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading clever-title">
+                        <h3>Domaines d'intervention</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for prestations in prestations %}
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-popular-course mb-100 wow fadeInUp" data-wow-delay="250ms">
+                            <a href="{{path('prestations_single',{'id':prestations.id})}}"><img src="{{ asset('images/fauna/' ~ prestations.fileName) }}" alt=""></a>
+                            <div class="course-content text-center">
+                                <h4>{{prestations.title}}</h4>
+                                <p class="truncate">{{prestations.content}}</p>
+                                <a href="{{path('prestations_single',{'id':prestations.id})}}"><p class="suite"><strong>Lire la suite</strong></p></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="best-tutors-area ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading clever-title">
+                        <h3 >Notre équipe d'expert</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="tutors-slide owl-carousel wow fadeInUp" data-wow-delay="250ms">
+                        {% for team in team %}
+                            <div class="single-tutors-slides">
+                                <div class="tutor-thumbnail">
+                                    <a href="{{path('team_single',{'id':team.id})}}"><img src="{{ asset('images/fauna/' ~ team.fileName) }}" alt=""></a>
+                                </div>
+                                <div class="tutor-information text-center">
+                                    <a href="{{path('team_single',{'id':team.id})}}"><h5>{{team.lastname}} {{team.firstname}}</h5>
+                                    <span>{{team.title}}</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum laoreet elit, sit amet tincidunt mauris ultrices vitae.</p></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="upcoming-events section-padding-100-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading clever-title">
+                        <h3>Dernières réalisations</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-upcoming-events mb-50 wow fadeInUp" data-wow-delay="250ms">
+                        <div class="events-thumb">
+                             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    {% for news in news %}
+                                        <div class="carousel-item {% if loop.first %}active{% endif %}">
+                                            <a href="{{path('news_single',{'id':news.id})}}"><img src="{{ asset('images/fauna/' ~ news.fileName) }}" style="height:230px;width:100%;" alt=""></a>
+                                            <a href="{{path('news_single',{'id':news.id})}}"><h4 class="event-title">{{news.title}}</h4></a>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-upcoming-events mb-50 wow fadeInUp" data-wow-delay="250ms">
+                        <div class="events-thumb">
+                             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    {% for news in news %}
+                                        <div  class="carousel-item {% if loop.first %}active{% endif %}">
+                                            <a href="{{path('news_single',{'id':news.id})}}"><img src="{{ asset('images/fauna/' ~ news.fileName) }}" style="height:230px;width:100%;" alt=""></a>
+                                            <a href="{{path('news_single',{'id':news.id})}}"><h4 class="event-title">{{news.title}}</h4></a>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-upcoming-events mb-50 wow fadeInUp" data-wow-delay="250ms">
+                        <div class="events-thumb">
+                             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    {% for news in news %}
+                                        <div class="carousel-item {% if loop.first %}active{% endif %}">
+                                            <a href="{{path('news_single',{'id':news.id})}}"><img src="{{ asset('images/fauna/' ~ news.fileName) }}" style="height:230px;width:100%;" alt=""></a>
+                                            <a href="{{path('news_single',{'id':news.id})}}"><h4 class="event-title">{{news.title}}</h4></a>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="register-now section-padding-100-0 d-flex justify-content-center align-items-center" style="background-image: url(img/core-img/texture.png);">
+        <div class="register-contact-form mb-100 wow fadeInUp" data-wow-delay="250ms">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <div class="forms">
+                            <h4 class="text-center">Contactez-nous</h4>
+                                {% for adresses in adresses %}
+                                    <div class="row text-center">
+                                        <div class="col-12 col-lg-6 mb-2">
+                                            <p>{{ adresses.nom }}</p>
+                                            <p>{{ adresses.rue }}</p>
+                                            <p>{{ adresses.ville }}</p>
+                                        </div>
+                                        <div class="col-12 col-lg-6 mb-2">
+                                            <p><i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-fax"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-at"></i></p>
+                                            <p>{{ adresses.tel }}</p>
+                                            <p>{{ adresses.mail }}</p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            <div class="col-12">
+                                <a href="{{ path('contact_create') }}" class="btn clever-btn w-100">Formulaire de contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+    
+    

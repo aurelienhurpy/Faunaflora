@@ -1,0 +1,31 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Modification profil{% endblock %}
+
+{% block body %}
+    <div class="dashb">
+        <div class="breadcumb-area">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Gestion des informations administrateur</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="adminban">
+            <h1 class="text-center text-white">Gestion des informations administrateur</h1>
+        </div>
+                
+        {% if user is same as (app.user) %}
+            <div class="row justify-content-center">
+                <div class="mt-5 p-5">
+                    <a href="{{ path('admin_account_profile') }}" class="btn btn-secondary">Modifier les informations</a>
+                </div>
+                <div class="mt-5 p-5">
+                    <a href="{{ path('admin_account_password') }}" class="btn btn-secondary">Modifier le mot de passe</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

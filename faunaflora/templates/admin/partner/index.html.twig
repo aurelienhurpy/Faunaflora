@@ -1,0 +1,45 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Gestion des partenaires{% endblock %}
+
+{% block body %}
+    <div class="dashb">
+        <div class="breadcumb-area">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('admin_dashboard') }}">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Gestion des partenaires</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="adminban">
+            <h1 class="text-center text-white">Gestion des partenaires</h1>
+        </div>
+        <table class="table table-hover">
+            <thead class="table-secondary">               
+                <th class="text-center">Nom</th>
+                <th class="text-center">Website</th>
+                <th class="text-center">Structure</th>
+                <th class="text-center">Action</th>
+            </thead>
+            <tbody>
+                {% for partner in pagination.data %}
+                    <tr>
+                        <td class="text-center">{{ partner.name }}</td>
+                        <td class="text-center">{{ partner.link }}</td>
+                        <td class="text-center">{{ partner.structure }}</td>
+                        <td class="text-center">
+                            <a href="{{ path('admin_partner_edit',{'id':partner.id}) }}" class="btn btn-success btn-sm">Modifier <i class="fas fa-edit"></i></a>
+                            <a href="{{ path('admin_partner_delete',{'id':partner.id}) }}" data-confirm="Attention ! Etes-vous sûr de vouloir supprimer ?" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center mb-5">
+            <a href="{{ path('partner_create') }}" class="btn table-secondary btn-sm">Créer</a>
+        </div>
+        {% if pagination.data|length > 5 %}
+    {{ pagination.display() }} 
+     {% endif %}
+    </div>
+{% endblock %}
